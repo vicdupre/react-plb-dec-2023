@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-
+import styles from "./Input.module.css";
 const Input = (props) => {
   const {
     value,
@@ -12,15 +12,18 @@ const Input = (props) => {
     required,
     ...rest
   } = props;
+
   return (
     <>
       <label htmlFor={id}>{label}</label>
       <input
+        className={`${styles["input-root"]} rounded`}
         value={value}
         onChange={onChange}
         type={type}
         placeholder={placeholder}
         name={name}
+        required={required}
         id={id}
         {...rest}
       />

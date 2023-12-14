@@ -1,0 +1,38 @@
+.root {
+    background-color: #D6DBD2;
+    height: 65px;
+    padding: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 15px;
+}
+
+.title{
+    color: #2C363F;
+}
+
+.linkContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 15px;
+}
+
+.link{
+    color: #F2F5EA;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.link:hover{
+    color: #E75A7C;
+}
+
+.activeLink{
+    color: #E75A7C;
+    font-size: 2em;
+    font-weight: bold;
+}

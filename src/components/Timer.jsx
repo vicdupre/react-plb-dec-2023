@@ -24,7 +24,7 @@ const Timer = () => {
     <div>
       <p>{time} secondes écoulées</p>
       <button onClick={() => setIsRunning((isRunning) => !isRunning)}>
-        Toggle timer
+        {isRunning ? "Arrêter" : "Lancer"} le timer
       </button>
     </div>
   );

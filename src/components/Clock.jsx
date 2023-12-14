@@ -6,7 +6,7 @@ const Clock = () => {
   useEffect(() => {
     const timer = setInterval(() => {
       setTime(new Date().toLocaleTimeString());
-      // console.log("Timer");
+      //console.log("Timer");
     }, 1000);
 
     return () => clearInterval(timer);

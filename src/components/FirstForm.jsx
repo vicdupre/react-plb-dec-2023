@@ -32,6 +32,7 @@ const FirstForm = ({ onSubmit = (values) => {} }) => {
         id="firstName"
         name="firstName"
         label="Prénom"
+        required
       />
       <Input
         value={fields.lastName}
@@ -39,6 +40,7 @@ const FirstForm = ({ onSubmit = (values) => {} }) => {
         id="lastName"
         name="lastName"
         label="Nom"
+        required
       />
       <Button type="submit">Valider</Button>
       <Button onClick={handleReset} type="reset">
