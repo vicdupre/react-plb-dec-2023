@@ -22,7 +22,7 @@ const articlesReducer = (state = initialState, action) => {
       return {
         ...state,
         articles: state.articles.filter(
-          (article) => article.id !== action.payload.id
+          (article) => article.id != action.payload.id
         ),
       };
     default:

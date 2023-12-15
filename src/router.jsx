@@ -8,6 +8,9 @@ import Person from "./pages/Person";
 import Articles from "./pages/Articles";
 import CreateArticle from "./pages/CreateArticle";
 import Article from "./pages/Article";
+import Reviews from "./pages/Reviews";
+import CreateReview from "./pages/CreateReview";
+import Review from "./pages/Review";
 
 const routes = {
   home: "/",
@@ -57,6 +60,21 @@ const router = createBrowserRouter([
       {
         path: "articles/:id",
         element: <Article />,
+      },
+      {
+        path: "reviews",
+        element: <Reviews />,
+        children: [
+          {
+            path: "add",
+            element: <CreateReview />,
+          },
+        ],
+      },
+
+      {
+        path: "reviews/:id",
+        element: <Review />,
       },
     ],
   },

@@ -38,6 +38,14 @@ const Header = () => {
         >
           Articles
         </NavLink>
+        <NavLink
+          className={({ isActive }) =>
+            isActive ? classes.activeLink : classes.link
+          }
+          to={"/reviews"}
+        >
+          Revues
+        </NavLink>
       </nav>
     </header>
   );

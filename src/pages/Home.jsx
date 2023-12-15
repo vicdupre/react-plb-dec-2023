@@ -7,6 +7,7 @@ import Timer from "../components/Timer";
 import usePersistedState from "../hooks/usePersistedState";
 import Button from "../components/Button";
 import { useSelector } from "react-redux";
+import Counter from "../components/Counter";
 
 function Home() {
   const [count, setCount] = usePersistedState("counter", 0);
@@ -31,8 +32,7 @@ function Home() {
       <Timer />
       <h1>Formation PLB</h1>
       <RandomColorButton />
-
-      <input className="input" />
+      <Counter />
 
       <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
