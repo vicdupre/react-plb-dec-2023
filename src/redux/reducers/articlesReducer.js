@@ -1,7 +1,14 @@
 import { ADD_ARTICLE, REMOVE_ARTICLE } from "../actions/articlesActions";
 
 const initialState = {
-  articles: [],
+  articles: [
+    {
+      id: 1,
+      title: "Premier article",
+      content:
+        "Redux peut être utilisé avec des composants fonctionnels en utilisant la bibliothèque react-redux. react-redux fournit des hooks qui permettent aux composants fonctionnels de se connecter au store Redux. Voici les principaux hooks que vous utiliserez pour connecter des composants fonctionnels au store Redux :",
+    },
+  ],
 };
 
 const articlesReducer = (state = initialState, action) => {

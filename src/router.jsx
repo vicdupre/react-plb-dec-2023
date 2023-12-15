@@ -5,6 +5,9 @@ import Home from "./pages/Home";
 import People, { loader } from "./pages/People";
 import CreatePerson, { action } from "./pages/CreatePerson";
 import Person from "./pages/Person";
+import Articles from "./pages/Articles";
+import CreateArticle from "./pages/CreateArticle";
+import Article from "./pages/Article";
 
 const routes = {
   home: "/",
@@ -39,6 +42,21 @@ const router = createBrowserRouter([
       {
         path: "people/:id",
         element: <Person />,
+      },
+      {
+        path: "articles",
+        element: <Articles />,
+        children: [
+          {
+            path: "add",
+            element: <CreateArticle />,
+          },
+        ],
+      },
+
+      {
+        path: "articles/:id",
+        element: <Article />,
       },
     ],
   },

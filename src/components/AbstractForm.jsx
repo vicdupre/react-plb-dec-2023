@@ -2,33 +2,7 @@ import { useState } from "react";
 import Button from "./Button";
 import Input from "./Input";
 
-const AbstractForm = () => {
-  const [fields, setFields] = useState({
-    firstName: {
-      label: "Prénom",
-      type: "text",
-      value: "",
-      props: {},
-    },
-    lastName: {
-      label: "Nom",
-      type: "text",
-      value: "",
-      props: {},
-    },
-    age: {
-      label: "Âge",
-      type: "number",
-      value: 18,
-      props: {
-        min: 0,
-        max: 120,
-      },
-    },
-  });
-  const handleClick = () => {
-    alert("clicked");
-  };
+const AbstractForm = ({ onSubmit, fields, setFields }) => {
   const handleChange = (event) => {
     console.log(event);
     setFields((prev) => ({
@@ -40,7 +14,7 @@ const AbstractForm = () => {
     }));
   };
   return (
-    <div>
+    <form onSubmit={(e) => onSubmit(e, fields)}>
       {Object.entries(fields).map(([key, field]) => (
         <Input
           key={key}
@@ -54,8 +28,8 @@ const AbstractForm = () => {
         />
       ))}
 
-      <Button onClick={handleClick}>Valider</Button>
-    </div>
+      <Button type="submit">Valider</Button>
+    </form>
   );
 };
 

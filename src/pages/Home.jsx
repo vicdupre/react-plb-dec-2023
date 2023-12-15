@@ -6,10 +6,12 @@ import Clock from "../components/Clock";
 import Timer from "../components/Timer";
 import usePersistedState from "../hooks/usePersistedState";
 import Button from "../components/Button";
+import { useSelector } from "react-redux";
 
 function Home() {
   const [count, setCount] = usePersistedState("counter", 0);
-
+  const nbArticles = useSelector((state) => state.articles.articles.length);
+  const nbReviews = useSelector((state) => state.reviews.reviews.length);
   const [shouldShowClock, setShouldShowClock] = useState(true);
 
   return (
@@ -41,7 +43,10 @@ function Home() {
         </p>
       </div>
       <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
+        Il y a actuellement {nbArticles} articles sur le site
+      </p>
+      <p className="read-the-docs">
+        Il y a actuellement {nbReviews} revues sur le site
       </p>
     </>
   );
